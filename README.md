@@ -37,7 +37,7 @@ many `Workout`s through `WorkoutExercise`.
 
 ## Installation
 
-Requires Python 3.8+ and [Pipenv](https://pipenv.pypa.io/).
+Requires Python 3.12 and [Pipenv](https://pipenv.pypa.io/).
 
 ```bash
 git clone https://github.com/Patience1m/workout-tracker-api.git
