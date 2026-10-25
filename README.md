@@ -50,17 +50,8 @@ cd server
 export FLASK_APP=app.py
 
 flask db upgrade head     # creates the database tables
-
 python seed.py            # adds example data (safe to re-run)
 ```
-
-
-## Changing the models
-
-If you change a model, generate and apply a new migration:
-
-    flask db migrate -m "describe the change"
-    flask db upgrade head
 
 ## Changing the models
 
