@@ -49,15 +49,27 @@ pipenv shell              # activates the virtual environment
 cd server
 export FLASK_APP=app.py
 
-flask db init             # creates the migrations folder (first time only)
-flask db migrate -m "create exercises, workouts and workout_exercises tables"
 flask db upgrade head     # creates the database tables
 
 python seed.py            # adds example data (safe to re-run)
 ```
 
-If the repository already contains a `server/migrations` folder, skip `flask db init`
-and `flask db migrate` and just run `flask db upgrade head`.
+
+## Changing the models
+
+If you change a model, generate and apply a new migration:
+
+    flask db migrate -m "describe the change"
+    flask db upgrade head
+
+## Changing the models
+
+If you change a model, generate and apply a new migration:
+
+```bash
+flask db migrate -m "describe the change"
+flask db upgrade head
+```
 
 ## Running the app
 
@@ -152,5 +164,5 @@ Example bodies:
     ├── schemas.py      # Marshmallow schemas and schema validations
     ├── seed.py         # Resets and seeds example data
     ├── test_app.py     # pytest suite
-    └── migrations/     # Alembic migrations (created by flask db init)
+    └── migrations/     # Alembic migrations
 ```
